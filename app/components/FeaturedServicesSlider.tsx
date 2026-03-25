@@ -56,15 +56,15 @@ export default function FeaturedServicesSlider() {
   };
 
   return (
-    <div className="relative lg:mx-72 md:mx-20 h-[70vh] min-h-[500px] overflow-hidden group mt-12">
+    <div className="relative max-w-7xl mx-auto h-[65vh] min-h-[450px] overflow-hidden group mt-16 shadow-2xl rounded-sm">
       {/* Background Images */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <Image
@@ -74,70 +74,82 @@ export default function FeaturedServicesSlider() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Centered Content Card */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end p-8 md:p-12">
-        <div className="relative w-full max-w-2xl flex flex-col items-center">
-          {/* Blurred Card Overlay */}
-          <motion.div
-            key={`card-${currentIndex}`}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative backdrop-blur-md bg-white/40 border border-white/20 rounded-sm p-8 md:p-12 pb-16 md:pb-20 text-center shadow-2xl w-full"
-          >
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-[#1a2b4b] mb-4 block">
-              Featured Services
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif text-[#1a2b4b] mb-6 tracking-tight">
-              {services[currentIndex].title}
-            </h2>
-            <p className="text-sm md:text-base font-sans text-[#1a2b4b]/80 max-w-md mx-auto leading-relaxed mb-4">
-              {services[currentIndex].description}
-            </p>
+      {/* Bottom-Docked Control Bar */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
+        <div className="flex flex-col md:flex-row items-end justify-between gap-8 backdrop-blur-md bg-white/10 border border-white/10 rounded-sm p-8 md:p-12 shadow-2xl relative overflow-hidden group/bar transition-all duration-500 hover:bg-white/15">
+          
+          {/* Decorative Corner Accent */}
+          <div className="absolute top-0 left-0 w-1 h-full bg-[#DC833D] opacity-70" />
 
-            {/* Pagination & Controls - Positioned at bottom edge */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center justify-center space-x-8 text-[#1a2b4b] bg-white/60 backdrop-blur-sm py-2 px-6 rounded-sm border border-white/20 shadow-lg">
+          {/* Content Area */}
+          <div className="flex-1 max-w-2xl">
+            <motion.div
+              key={`text-${currentIndex}`}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-4"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-px bg-[#DC833D]" />
+                <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.4em] uppercase text-white/90">
+                  Featured Service {currentIndex + 1}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-quicksand text-white tracking-tight uppercase">
+                {services[currentIndex].title}
+              </h2>
+              <p className="text-sm md:text-base font-light text-white/80 leading-relaxed max-w-xl">
+                {services[currentIndex].description}
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Controls Area */}
+          <div className="flex flex-col items-center md:items-end gap-8 min-w-[200px]">
+            {/* Pagination Controls */}
+            <div className="flex items-center gap-6 text-white border-b border-white/20 pb-4 w-full justify-center md:justify-end">
               <button
                 onClick={prevSlide}
-                className="hover:text-[#DC833D] transition-colors p-1"
+                className="hover:text-[#DC833D] transition-all p-2 rounded-full hover:bg-white/10"
                 aria-label="Previous slide"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <span className="text-xs font-sans font-medium tracking-widest min-w-[50px]">
-                {currentIndex + 1} / {services.length}
-              </span>
+              <div className="flex flex-col items-center min-w-[40px]">
+                 <span className="text-lg font-quicksand font-bold leading-none">{currentIndex + 1}</span>
+                 <div className="w-4 h-[1px] bg-white/30 my-1" />
+                 <span className="text-[10px] opacity-60 font-medium">{services.length}</span>
+              </div>
               <button
                 onClick={nextSlide}
-                className="hover:text-[#DC833D] transition-colors p-1"
+                className="hover:text-[#DC833D] transition-all p-2 rounded-full hover:bg-white/10"
                 aria-label="Next slide"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
-          </motion.div>
 
-          {/* Details Button - Outside the card */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-16 flex justify-center"
-          >
-            <a
+            {/* Action Button */}
+            <motion.a
+              key={`btn-${currentIndex}`}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               href={`/services#${services[currentIndex].id}`}
-              className="bg-[#1a2b4b] text-white px-10 py-6 md:px-16 md:py-10 flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 min-w-[200px] shadow-xl"
+              className="group/btn flex items-center gap-4 text-white hover:text-[#DC833D] transition-colors"
             >
-              <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase">
-                Details
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase border-b border-transparent group-hover/btn:border-[#DC833D] pb-1 transition-all">
+                Explore Details
               </span>
-              <ArrowRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
+              <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover/btn:border-[#DC833D] transition-all">
+                <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
+              </div>
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>

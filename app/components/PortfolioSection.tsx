@@ -10,94 +10,95 @@ export default function PortfolioSection() {
 
 
       {/* Portfolio Section */}
-      <div className="bg-white px-4 py-12 md:px-8 lg:px-16 lg:mx-72 md:mx-20">
+      <div className="bg-white px-4 py-16 md:px-8 lg:px-16 max-w-7xl mx-auto">
         {/* Top Row: Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center mb-16 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 items-center mb-16">
           {/* Property 1 */}
           <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
-            <h3 className="text-navy-900 font-sans text-sm md:text-base font-semibold group-hover:text-gold-600 transition-colors uppercase tracking-wider">
-              The Ritz-Carlton O&apos;ahu,<br />Turtle Bay
+            <h3 className="text-[#1a2b4b] font-quicksand text-xs md:text-sm font-bold group-hover:text-[#DC833D] transition-colors uppercase tracking-widest leading-tight">
+              Nicon Luxury<br />Abuja
             </h3>
-            <span className="text-gold-600 font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="text-[#DC833D] font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
               Recent Acquisition
             </span>
-            <div className="w-16 h-[2px] bg-navy-900 mt-2" />
+            <div className="w-12 h-px bg-[#1a2b4b]/20 mt-2 group-hover:bg-[#DC833D] transition-colors" />
           </div>
 
           {/* Property 2 */}
           <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
-            <h3 className="text-navy-900 font-sans text-sm md:text-base font-semibold group-hover:text-gold-600 transition-colors uppercase tracking-wider">
-              Alila Ventana Big Sur
+            <h3 className="text-[#1a2b4b] font-quicksand text-xs md:text-sm font-bold group-hover:text-[#DC833D] transition-colors uppercase tracking-widest leading-tight">
+              The Grand<br />Abuja Marquis
             </h3>
-            <span className="text-gray-500 font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="text-gray-400 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
               Featured Property
             </span>
           </div>
 
           {/* Central CTA */}
-          <Link href="/portfolio" className="bg-[#1a2b4b] text-white px-8 py-10 flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-colors min-h-[160px]">
-            <span className="text-[10px] md:text-xs font-bold font-sans tracking-[0.3em] uppercase text-center leading-relaxed">
+          <Link href="/portfolio" className="col-span-2 md:col-span-1 bg-[#1a2b4b] text-white px-6 py-8 rounded-sm flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-h-[140px]">
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-center leading-relaxed">
               Our<br />Portfolio
             </span>
             <motion.div
               whileHover={{ x: 5 }}
-              className="text-white"
+              className="text-[#DC833D]"
             >
-              <ArrowRight className="w-5 h-5 text-[#DC833D]" />
+              <ArrowRight className="w-5 h-5" />
             </motion.div>
           </Link>
 
           {/* Property 3 */}
           <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
-            <h3 className="text-navy-900 font-sans text-sm md:text-base font-semibold group-hover:text-gold-600 transition-colors uppercase tracking-wider">
-              1 Hotel Nashville
+            <h3 className="text-[#1a2b4b] font-quicksand text-xs md:text-sm font-bold group-hover:text-[#DC833D] transition-colors uppercase tracking-widest leading-tight">
+              Abuja Regency<br />Resorts
             </h3>
-            <span className="text-gray-500 font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="text-gray-400 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
               Recent Acquisition
             </span>
           </div>
 
           {/* Property 4 */}
           <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
-            <h3 className="text-navy-900 font-sans text-sm md:text-base font-semibold group-hover:text-gold-600 transition-colors uppercase tracking-wider">
-              New York Marriott<br />Marquis
+            <h3 className="text-[#1a2b4b] font-quicksand text-xs md:text-sm font-bold group-hover:text-[#DC833D] transition-colors uppercase tracking-widest leading-tight">
+              Continental Plaza<br />Abuja
             </h3>
-            <span className="text-gray-500 font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="text-gray-400 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
               Featured Property
             </span>
           </div>
         </div>
 
         {/* Middle Row: Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-[#DC833D] mb-8">
-          <div className="flex flex-col items-center justify-center p-8 md:border-r border-[#DC833D] space-y-2">
-            <span className="text-4xl md:text-5xl font-eb-garamond font-light text-[#DC833D] tracking-tight">1</span>
-            <span className="text-[11px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Hotels</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-[#DC833D]/30 mb-8 bg-gray-50/50">
+          <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
+            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">12</span>
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Strategic Properties</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-8 md:border-r border-[#DC833D] space-y-2">
-            <span className="text-4xl md:text-5xl font-eb-garamond font-light text-[#DC833D] tracking-tight">252</span>
-            <span className="text-[11px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Rooms</span>
+          <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
+            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">3,500+</span>
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Guest Rooms</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-8 space-y-2">
-            <span className="text-4xl md:text-5xl font-eb-garamond font-light text-[#DC833D] tracking-tight">1</span>
-            <span className="text-[11px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Top Africa Markets</span>
+          <div className="flex flex-col items-center justify-center p-10 space-y-2 group hover:bg-white transition-colors">
+            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">5</span>
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Major African Markets</span>
           </div>
         </div>
 
         {/* Bottom Row: News Banner */}
-        <Link href="/news/earnings-call-q4-2025" className="flex flex-col md:flex-row justify-between items-center py-8 group border-y   border-[#DC833D] hover:border-[#DC833D] transition-all duration-300">
-          <div className="flex flex-col space-y-1 mb-4 md:mb-0">
-            <p className="text-[#1a2b4b] font-quicksand font-medium text-base md:text-lg tracking-tight group-hover:text-black transition-colors">
-              Fourth Quarter 2025 Earnings Call on February 19, 2026
+        <Link href="/investors/results" className="flex flex-col md:flex-row justify-between items-center py-10 px-6 group border border-[#DC833D]/30 hover:bg-[#1a2b4b] transition-all duration-500 rounded-sm">
+          <div className="flex flex-col space-y-2 mb-6 md:mb-0 text-center md:text-left">
+            <p className="text-[#162136] font-quicksand font-bold text-lg md:text-xl tracking-tight group-hover:text-white transition-colors">
+              Abuja International Hotels Q4 2025 Earnings Performance
+            </p>
+            <p className="text-[#DC833D] text-[10px] font-bold tracking-widest uppercase group-hover:text-white/80 transition-colors">
+              Corporate Announcement • February 19, 2026
             </p>
           </div>
-          <div className="flex items-center space-x-3 text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#DC833D] transition-all group-hover:translate-x-2">
-            <span className="relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-[#DC833D] group-hover:after:w-full after:transition-all after:duration-300">
-              Learn More
+          <div className="flex items-center space-x-3 text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#DC833D] transition-all group-hover:text-white">
+            <span className="relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-[#DC833D] group-hover:after:bg-white group-hover:after:w-full after:transition-all after:duration-300">
+              Review Performance
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
+            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
           </div>
         </Link>
       </div>
