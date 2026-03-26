@@ -9,7 +9,7 @@ export const ROOMS = [
         price: 'NGN40,000',
         rating: '4.5',
         amenities: ['1 King + 2', '3 Attached Bath', '100Mbps'],
-        description: 'Experience comfort like never before in our Deluxe Room. Designed for relaxation and productivity, this room features a spacious layout with modern amenities. Enjoy a peaceful night\'s sleep on our premium king-sized bed and wake up to a stunning view of the city. Perfect for solo travelers or couples seeking a touch of luxury.',
+        description: 'Experience comfort like never before in our Deluxe Room. Designed for relaxation and productivity, this room features a spacious layout with modern amenities. Enjoy a peaceful night sleep on our premium king-sized bed and wake up to a stunning view of the city. Perfect for solo travelers or couples seeking a touch of luxury.',
         stats: {
             bedrooms: 1,
             bathrooms: 1,

@@ -40,7 +40,7 @@ const faqData: FAQCategory[] = [
       },
       {
         question: 'WHAT IS ABUJA INTERNATIONAL HOTELS, INC. COMMON STOCK TICKER SYMBOL AND WHAT ARE THE CUSIP NUMBERS FOR ITS COMMON STOCK?',
-        answer: 'Abuja International Hotels, Inc.\'s common stock ticker symbol is AIH and shares are traded on the Nigerian Stock Exchange. The CUSIP number for the company\'s common stock is 12345U 10 1.'
+        answer: 'Abuja International Hotels, Inc common stock ticker symbol is AIH and shares are traded on the Nigerian Stock Exchange. The CUSIP number for the company common stock is 12345U 10 1.'
       }
     ]
   },
@@ -51,7 +51,7 @@ const faqData: FAQCategory[] = [
         question: 'WHERE CAN I GET THE LATEST CORPORATE NEWS RELEASES AND FINANCIAL REPORTS?',
         answer: (
           <p>
-            The company\'s news releases can be found on our website on the <a href="/investors/press-releases" className="text-[#DC833D] hover:underline font-bold">Press Releases</a> page.
+            The company's news releases can be found on our website on the <a href="/investors/press-releases" className="text-[#DC833D] hover:underline font-bold">Press Releases</a> page.
           </p>
         )
       },
@@ -59,7 +59,7 @@ const faqData: FAQCategory[] = [
         question: 'HOW CAN I VIEW DOCUMENTS ABUJA INTERNATIONAL HOTELS, INC. HAS FILED WITH THE SECURITIES & EXCHANGE COMMISSION (SEC)?',
         answer: (
           <p>
-            The company\'s filings can be found on our website on the <a href="/investors/results?tab=sec-filings" className="text-[#DC833D] hover:underline font-bold">SEC Filings</a> page.
+            The company's filings can be found on our website on the <a href="/investors/results?tab=sec-filings" className="text-[#DC833D] hover:underline font-bold">SEC Filings</a> page.
           </p>
         )
       },
@@ -101,7 +101,7 @@ export default function FAQPage() {
   const [openItems, setOpenItems] = useState<string[]>([]);
 
   const toggleItem = (id: string) => {
-    setOpenItems(prev => 
+    setOpenItems(prev =>
       prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
     );
   };
@@ -122,12 +122,12 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
           { title: 'Home', href: '/' },
           { title: 'Investor Relations', href: '/investors/overview' }
-        ]} 
-        currentPage="FAQs" 
+        ]}
+        currentPage="FAQs"
       />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20 text-center">
@@ -147,7 +147,7 @@ export default function FAQPage() {
                   const isOpen = openItems.includes(id);
                   return (
                     <div key={itemIdx} className="border border-gray-100 rounded-sm">
-                      <button 
+                      <button
                         onClick={() => toggleItem(id)}
                         className="w-full flex items-center justify-between px-6 py-5 text-left group transition-colors hover:bg-gray-50/50"
                       >
@@ -192,7 +192,7 @@ export default function FAQPage() {
             <User className="w-4 h-4 group-hover:text-[#DC833D]" />
             <span className="text-[10px] font-bold tracking-widest uppercase">Contacts</span>
           </button>
-          <button 
+          <button
             onClick={() => window.print()}
             className="flex items-center gap-3 group hover:text-[#1a2b4b] transition-colors"
           >
