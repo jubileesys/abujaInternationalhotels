@@ -114,7 +114,7 @@ export default function FAQPage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/pool-img.jpg"
+            src="/pool-img.png"
             alt="FAQ Hero"
             className="w-full h-full object-cover"
           />

@@ -33,7 +33,7 @@ export default function StockInformationPage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/pool-img.jpg"
+            src="/pool-img.png"
             alt="Stock Information Hero"
             className="w-full h-full object-cover"
           />

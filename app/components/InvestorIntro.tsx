@@ -5,7 +5,7 @@ import NewsBanner from './NewsBanner';
 
 const creditRatings = [
   { agency: 'S&P', rating: 'BBB-' },
-  { agency: 'MOODY\'S', rating: 'Baa2' },
+  { agency: 'MOODY', rating: 'Baa2' },
   { agency: 'FITCH', rating: 'BBB' },
 ];
 

@@ -10,7 +10,7 @@ export default function FinancialReportsPage() {
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <Image
-                    src="/nicon.jpg"
+                    src="/nicon.png"
                     alt="Financial Reports"
                     fill
                     className="object-cover"

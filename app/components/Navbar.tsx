@@ -47,6 +47,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Responsive check
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Scroll tracking
   useEffect(() => {
@@ -79,31 +88,37 @@ export default function Navbar() {
       <motion.div
         initial={false}
         animate={{
-          top: isScrolled ? 24 : 32,
-          left: isScrolled ? 24 : 32,
+          top: isMobile ? 0 : (isScrolled ? 24 : 32),
+          left: isMobile ? 0 : (isScrolled ? 24 : 32),
+          right: isMobile ? 0 : 'auto',
+          width: isMobile ? '100%' : 'auto',
+          borderRadius: isMobile ? 0 : '4px',
+          boxShadow: isMobile && !isScrolled ? 'none' : '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
         }}
-        className="fixed z-60 flex items-stretch bg-white shadow-2xl border border-gray-100 overflow-hidden rounded-sm"
+        className={`fixed z-60 flex items-stretch bg-white border-b md:border border-gray-100 overflow-hidden transition-colors ${isMobile ? 'h-16' : 'h-auto'}`}
       >
         <motion.div
           initial={false}
           animate={{
-            width: isScrolled ? 0 : 'auto',
-            opacity: isScrolled ? 0 : 1,
+            width: isMobile ? 'auto' : (isScrolled ? 0 : 'auto'),
+            opacity: isMobile ? 1 : (isScrolled ? 0 : 1),
           }}
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           className="overflow-hidden border-r border-gray-100 whitespace-nowrap"
         >
-          <Link href="/" className="px-6 py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[140px] h-full">
-            <img src="/logo.png" alt="Abuja International" className="h-10 w-auto object-contain" />
+          <Link href="/" className="px-4 md:px-6 py-0 md:py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[120px] md:min-w-[140px] h-full">
+            <img src="/logo.png" alt="Abuja International" className="h-8 md:h-10 w-auto object-contain" />
           </Link>
         </motion.div>
 
-        <button
-          onClick={() => setIsOpen(true)}
-          className="px-6 py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[72px] md:min-w-[80px]"
-        >
-          <Menu className="w-8 h-8 text-[#1a2b4b]" />
-        </button>
+        <div className={`flex items-stretch ${isMobile ? 'flex-1 justify-end' : 'flex-none'}`}>
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-6 py-0 md:py-4 hover:bg-gray-50 transition-colors flex items-center justify-center min-w-[64px] md:min-w-[80px]"
+          >
+            <Menu className="w-7 h-7 md:w-8 md:h-8 text-[#1a2b4b]" />
+          </button>
+        </div>
       </motion.div>
 
       {/* Drawer Overlay with Backdrop */}

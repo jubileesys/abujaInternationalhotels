@@ -83,7 +83,7 @@ export default function PressReleasesPage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/pool-img.jpg"
+            src="/pool-img.png"
             alt="Press Releases Hero"
             className="w-full h-full object-cover"
           />
@@ -91,12 +91,12 @@ export default function PressReleasesPage() {
         </div>
       </section>
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
           { title: 'Home', href: '/' },
           { title: 'Investor Relations', href: '/investors/overview' }
-        ]} 
-        currentPage="Press Releases" 
+        ]}
+        currentPage="Press Releases"
       />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20 text-center">
@@ -108,7 +108,7 @@ export default function PressReleasesPage() {
         <div className="flex flex-col md:flex-row items-end justify-center gap-6 mb-20 bg-gray-50/50 p-8 rounded-sm">
           <div className="w-full md:w-64 text-left">
             <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-2">News Category</label>
-            <select 
+            <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full bg-white border border-gray-200 px-4 py-3 text-sm font-sans focus:outline-none focus:border-[#DC833D]"
@@ -122,7 +122,7 @@ export default function PressReleasesPage() {
           </div>
           <div className="w-full md:w-64 text-left">
             <label className="block text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-2">Year</label>
-            <select 
+            <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
               className="w-full bg-white border border-gray-200 px-4 py-3 text-sm font-sans focus:outline-none focus:border-[#DC833D]"
@@ -133,7 +133,7 @@ export default function PressReleasesPage() {
               <option>2024</option>
             </select>
           </div>
-          <button 
+          <button
             onClick={handleFilter}
             className="bg-white border-2 border-[#c4a062] text-[#c4a062] hover:bg-[#c4a062] hover:text-white px-12 py-3 text-[10px] font-bold tracking-widest uppercase transition-all duration-300"
           >
@@ -146,7 +146,7 @@ export default function PressReleasesPage() {
           <AnimatePresence mode="wait">
             {filteredReleases.length > 0 ? (
               filteredReleases.map((release) => (
-                <motion.div 
+                <motion.div
                   key={release.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ export default function PressReleasesPage() {
             <User className="w-4 h-4 group-hover:text-[#DC833D]" />
             <span className="text-[10px] font-bold tracking-widest uppercase">Contacts</span>
           </button>
-          <button 
+          <button
             onClick={() => window.print()}
             className="flex items-center gap-3 group hover:text-[#1a2b4b] transition-colors"
           >

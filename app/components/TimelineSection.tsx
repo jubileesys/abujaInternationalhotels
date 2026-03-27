@@ -20,7 +20,7 @@ const timelineEvents: TimelineEvent[] = [
         year: "2007",
         title: "A New Identity",
         description: "The hotel transitioned to fully indigenous management, rebranding as Nicon Luxury Abuja while maintaining its commitment to world-class hospitality.",
-        image: "/nicon.jpg"
+        image: "/nicon.png"
     },
     {
         year: "Present Day",

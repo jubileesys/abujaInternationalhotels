@@ -43,7 +43,7 @@ export default function CareersSection() {
         {/* Bottom Banner Image */}
         <div className="relative w-full h-[400px] md:h-[600px] z-10 overflow-hidden">
           <Image
-            src="/hero-img.jpg"
+            src="/fullview-4.jpeg"
             alt="Resort Careers"
             fill
             className="object-cover"

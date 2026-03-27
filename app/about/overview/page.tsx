@@ -58,7 +58,7 @@ export default function CompanyOverviewPage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-img.jpg" // Abuja Skyline / Urban Landscape
+            src="/nicon.png" // Abuja Skyline / Urban Landscape
             alt="Company Overview Hero"
             className="w-full h-full object-cover"
           />

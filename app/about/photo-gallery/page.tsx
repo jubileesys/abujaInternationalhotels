@@ -5,24 +5,28 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import InvestorMaterial from '@/app/components/InvestorMaterial';
 
 const photos = [
-    { src: '/abj.jpg', alt: 'Skyline View' },
+    { src: '/fullview-1.png', alt: 'Skyline View' },
+    { src: '/fullview-3.png', alt: 'Skyline View' },
     { src: '/hero-img.jpg', alt: 'Hotel Facade at Night' },
     { src: '/reception-img.jpg', alt: 'Elegant Reception' },
     { src: '/business-img.jpg', alt: 'Business Lounge' },
     { src: '/fine-img.jpg', alt: 'Fine Dining Restaurant' },
-    { src: '/pool-img.jpg', alt: 'Luxury Swimming Pool' },
-    { src: '/logde-img.jpg', alt: 'Premium Lodge Room' },
+    { src: '/fullview-main.png', alt: 'Skyline View' },
+    { src: '/pool-img.png', alt: 'Luxury Swimming Pool' },
+    { src: '/tennis.jpg', alt: 'Tennis Court' },
+
     { src: '/conference-img.jpg', alt: 'Conference Hall' },
     { src: '/spa-img.jpg', alt: 'Relaxing Spa & Wellness' },
+    { src: '/fullview-2.png', alt: 'Skyline View' },
     { src: '/gym-img.jpg', alt: 'State-of-the-art Gym' },
-    { src: '/nicon.jpg', alt: 'Exterior View' },
+    { src: '/nicon.png', alt: 'Exterior View' },
 ];
 
 export default function PhotoGalleryPage() {
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
-            
+
             {/* Hero Section */}
             <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -36,12 +40,12 @@ export default function PhotoGalleryPage() {
                 </div>
             </section>
 
-            <Breadcrumbs 
+            <Breadcrumbs
                 items={[
                     { title: 'Home', href: '/' },
                     { title: 'Our Company', href: '/about/overview' }
-                ]} 
-                currentPage="Photo Gallery" 
+                ]}
+                currentPage="Photo Gallery"
             />
 
             <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20 text-center">

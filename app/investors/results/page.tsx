@@ -117,7 +117,7 @@ function FinancialReportsContent() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/pool-img.jpg"
+            src="/pool-img.png"
             alt="Financial Reports Hero"
             className="w-full h-full object-cover"
           />
@@ -125,12 +125,12 @@ function FinancialReportsContent() {
         </div>
       </section>
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
           { title: 'Home', href: '/' },
           { title: 'Investor Relations', href: '/investors/overview' }
-        ]} 
-        currentPage="Financial Reports" 
+        ]}
+        currentPage="Financial Reports"
       />
 
       {/* Tabbed Navigation */}

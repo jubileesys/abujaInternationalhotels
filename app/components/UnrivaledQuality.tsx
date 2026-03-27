@@ -19,7 +19,7 @@ export default function UnrivaledQuality() {
         {/* Background Image Container with Fades */}
         <div className="absolute inset-0 z-0 h-full w-full">
           <Image
-            src="/pool-img.jpg"
+            src="/pool-img.png"
             alt="Unrivaled Quality Resort"
             fill
             className="object-cover opacity-60" // Added opacity for faded look

@@ -10,7 +10,7 @@ const portfolioItems = [
     {
         title: "Luxury Accommodations",
         description: "Experience unparalleled comfort in our meticulously designed rooms and suites. Each space reflects a perfect harmony of contemporary elegance and timeless Nigerian hospitality, offering panoramic views of the city skyline or our lush private gardens.",
-        image: "/logde-img.jpg",
+        image: "/yellow-room.jpg",
         linkText: "Explore Rooms",
         linkHref: "#"
     },
@@ -46,7 +46,7 @@ export default function PortfolioPage() {
             <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/nicon.jpg"
+                        src="/nicon.png"
                         alt="Our Portfolio at Abuja International Hotels"
                         className="w-full h-full object-cover text-white"
                         loading="eager"

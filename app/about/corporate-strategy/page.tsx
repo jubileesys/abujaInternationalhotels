@@ -12,7 +12,7 @@ export default function CorporateStrategyPage() {
             <section className="relative h-[45vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/nicon.jpg"
+                        src="/nicon.png"
                         alt="Resort View"
                         className="w-full h-full object-cover"
                         loading="eager"

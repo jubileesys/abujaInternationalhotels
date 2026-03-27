@@ -22,16 +22,16 @@ export default function KeyMaterialsPage() {
     <main className="min-h-screen bg-[#1a2b4b] text-white selection:bg-[#DC833D] selection:text-white">
       {/* Background Decor (Faded Image) */}
       <div className="fixed inset-0 z-0 opacity-10 pointer-events-none">
-        <img 
-          src="/pool-img.jpg" 
-          alt="Abstract Background" 
+        <img
+          src="/pool-img.png"
+          alt="Abstract Background"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Close Button */}
-      <Link 
-        href="/investors/overview" 
+      <Link
+        href="/investors/overview"
         className="fixed top-8 right-8 md:top-12 md:right-12 z-50 p-2 hover:bg-white/10 rounded-full transition-all duration-300 group"
       >
         <X className="w-8 h-8 text-white/50 group-hover:text-white group-hover:rotate-90 transition-transform" />
