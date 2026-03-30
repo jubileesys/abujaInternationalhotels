@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="font-semibold">(234) 809-555-6005</span>
             </a>
 
-            <Link href="/newsletters" className="flex items-center gap-3 hover:text-[#DC833D] transition-colors group">
+            <Link href="/contact" className="flex items-center gap-3 hover:text-[#DC833D] transition-colors group">
               <LinkIcon className="w-5 h-5 translate-y-px" />
               <span className="font-semibold">Sign Up for Email Alerts</span>
             </Link>

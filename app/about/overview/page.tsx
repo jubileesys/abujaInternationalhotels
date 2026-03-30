@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navbar from '@/app/components/Navbar';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import InvestorMaterial from '@/app/components/InvestorMaterial';
+import MissionVision from '@/app/components/ui/MissionVision';
 
 const strategicPillars = [
   {
@@ -81,15 +82,22 @@ export default function CompanyOverviewPage() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-quicksand text-[#1a2b4b] mb-12 uppercase tracking-tight"
         >
-          Premier Hospitality Investment Group
+          Overview and history
         </motion.h1>
         <p className="max-w-4xl mx-auto text-lg md:text-xl text-gray-500 font-sans leading-relaxed mb-16">
-          Abuja International Hotels, Inc. is a leading luxury hospitality group and the premier hotel owner in Nigeria. Our geographically diverse portfolio of iconic and irreplaceable assets in prime metropolitan and resort markets are managed by the world's most prestigious hospitality brands.
+          Abuja International Hotels Plc offers unparalleled luxury and comfort in the heart of
+          Abuja. A premier destination for business and leisure. set against the spectacular
+          backdrop of Aso Rock, right at the center of the Federal Capital
+          Territory. The hotel came into existence as a result of Nigeria’s hosting
+          of the Commonwealth Head of Government Meeting (CHOGM) in 2003
+          as it received the privilege to accommodate members of the
+          Commonwealth Business Forum
         </p>
       </section>
+      <MissionVision />
 
       {/* Strategic Pillars Section */}
-      <section className="bg-gray-50 py-24 border-y border-gray-100">
+      {/*   <section className="bg-gray-50 py-24 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center mb-20 uppercase tracking-[0.2em] font-bold text-[#DC833D] text-[10px] md:text-xs">
             Our Foundation for Excellence
@@ -124,10 +132,10 @@ export default function CompanyOverviewPage() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Culture Section (EPIC) */}
-      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      {/*  <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-5xl font-quicksand text-[#1a2b4b] mb-8 uppercase tracking-tight">Our Culture</h2>
@@ -158,10 +166,10 @@ export default function CompanyOverviewPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Quick Links Grid */}
-      <section className="bg-gray-50 py-24 border-y border-gray-100">
+      {/*  <section className="bg-gray-50 py-24 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {quickLinks.map((link, idx) => (
@@ -176,13 +184,13 @@ export default function CompanyOverviewPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Careers Banner */}
       <section className="relative h-[400px] flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-[#1a2b4b] z-0" />
         <div className="relative z-10 max-w-4xl px-6">
-          <h2 className="text-3xl md:text-5xl font-quicksand text-white mb-8 uppercase tracking-tight">Explore a Career with AIH</h2>
+          <h2 className="text-3xl md:text-5xl font-quicksand text-white mb-8 uppercase tracking-tight">Explore a Career with Us</h2>
           <p className="text-sm md:text-lg text-gray-300 font-sans leading-relaxed mb-10">
             Our company culture and benefits provide an employee experience that is second-to-none. Join a team whose focus and goals can be summarized in three words: Best-in-Class.
           </p>
@@ -193,7 +201,7 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* Company News Section */}
-      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center">
+      {/*  <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center">
         <div className="text-[10px] font-bold tracking-[0.4em] text-gray-400 uppercase mb-20 border-b border-gray-100 pb-4">
           Other Company News
         </div>
@@ -212,7 +220,7 @@ export default function CompanyOverviewPage() {
         <Link href="/press-releases" className="text-[10px] font-bold tracking-[0.3em] text-[#1a2b4b] uppercase border-b-2 border-[#DC833D] pb-1 hover:text-[#DC833D] transition-colors">
           View All news
         </Link>
-      </section>
+      </section> */}
 
       {/* Property Spotlight */}
       <section className="relative h-[800px] flex items-center justify-center overflow-hidden group">
@@ -225,7 +233,7 @@ export default function CompanyOverviewPage() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative z-10 w-full max-w-2xl mx-6">
+        {/* <div className="relative z-10 w-full max-w-2xl mx-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -242,7 +250,7 @@ export default function CompanyOverviewPage() {
               Explore Our Portfolio
             </button>
           </motion.div>
-        </div>
+        </div> */}
       </section>
 
       <InvestorMaterial />

@@ -3,26 +3,12 @@
 import { motion } from 'framer-motion';
 
 const contactColumns = [
+
+
   {
-    title: 'Investor Information',
+    title: 'Contact Us',
     items: [
-      { label: 'Investor Relations', value: '601 International Avenue, Suite 100\nAbuja, Nigeria' },
-      { label: 'Phone', value: '+234 9 123 4567' },
-      { label: 'Email', value: 'investor.relations@abujainternational.com' },
-    ],
-  },
-  {
-    title: 'Shareholder Services',
-    items: [
-      { label: 'Transfer Agent', value: 'ComputerShare Investor Services\nP.O. Box 43078\nProvidence, RI 02940-3078' },
-      { label: 'Toll Free', value: '800 522 6645' },
-      { label: 'Shareholder Website', value: 'www.computershare.com/investors' },
-    ],
-  },
-  {
-    title: 'Corporate Headquarters',
-    items: [
-      { label: 'Executive Offices', value: 'Abuja International Hotel\nCentral Business District\nAbuja, Nigeria 900211' },
+      { label: 'Physical office address', value: 'Plot 903, Tafawa Balewa way, area 11, Garki, Abuja' },
     ],
   },
 ];
@@ -33,7 +19,7 @@ export default function InvestorContact() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
           {contactColumns.map((col, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

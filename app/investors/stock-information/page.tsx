@@ -67,7 +67,7 @@ export default function StockInformationPage() {
           <div className="mb-12">
             <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase block mb-4">-</span>
             <div className="flex flex-col items-center">
-              <span className="text-6xl md:text-8xl font-quicksand text-[#1a2b4b] font-light tracking-tight">0.00<span className="text-xl ml-2 uppercase text-gray-400 font-bold tracking-widest">USD</span></span>
+              <span className="text-6xl md:text-8xl font-quicksand text-[#1a2b4b] font-light tracking-tight">0.00<span className="text-xl ml-2 uppercase text-gray-400 font-bold tracking-widest">NGN</span></span>
               <span className="text-2xl md:text-3xl font-quicksand text-green-600 mt-2">+0.00 (0.00%)</span>
             </div>
           </div>
