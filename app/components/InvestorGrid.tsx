@@ -59,11 +59,11 @@ export default function InvestorGrid() {
       description: 'Current and historical stock quotes, interactive charts, and dividend information.',
       href: '/investors/stock-information',
     },
-    {
-      title: 'Investor FAQs',
-      description: 'Answers to commonly asked questions from our investors and analysts.',
-      href: '/investors/faqs',
-    },
+    /*  {
+       title: 'Investor FAQs',
+       description: 'Answers to commonly asked questions from our investors and analysts.',
+       href: '/investors/faqs',
+     }, */
   ];
 
   return (

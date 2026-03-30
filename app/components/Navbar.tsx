@@ -19,7 +19,7 @@ const mainMenuItems = [
       { title: 'Annual Reports', href: '/investors/results?tab=annual-reports' },
       { title: 'Stock Information ', href: '/investors/stock-information' },
       { title: 'Press Releases/ News ', href: '/investors/press-releases' },
-      { title: 'FAQs', href: '/investors/faqs' },
+      // { title: 'FAQs', href: '/investors/faqs' },
       { title: 'Key Investor Materials ', href: '/investors/key-materials' },
 
     ],
@@ -39,7 +39,7 @@ const mainMenuItems = [
 
 const footerLinks = [
   { title: 'Contact', href: '/contact' },
-  { title: 'Investor FAQs', href: '/investors/faqs' },
+  //{ title: 'Investor FAQs', href: '/investors/faqs' },
 
 ];
 

@@ -25,7 +25,7 @@ const sitemapData = [
             { name: "Stock Information", href: "/investors/stock-information" },
             { name: "Key Investor Materials", href: "/investors/key-materials" },
             { name: "Corporate Responsibility", href: "/investors/corporate-responsibility" },
-            { name: "Investor FAQs", href: "/investors/faqs" }
+            //{ name: "Investor FAQs", href: "/investors/faqs" }
         ]
     },
     {
