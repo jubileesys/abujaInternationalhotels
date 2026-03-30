@@ -27,9 +27,9 @@ export default function InvestorOverviewPage() {
         </div>
       </section>
 
-      <Breadcrumbs 
-        items={[{ title: 'Home', href: '/' }]} 
-        currentPage="Investor Relations" 
+      <Breadcrumbs
+        items={[{ title: 'Home', href: '/' }]}
+        currentPage="Investor Relations"
       />
 
       <InvestorIntro />
@@ -47,7 +47,7 @@ export default function InvestorOverviewPage() {
             </div>
             <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#1a2b4b]">
               Learn More
-              <div className="w-8 h-[1px] bg-[#DC833D] group-hover:w-12 transition-all" />
+              <div className="w-8 h-px bg-[#DC833D] group-hover:w-12 transition-all" />
             </div>
           </div>
         </div>
