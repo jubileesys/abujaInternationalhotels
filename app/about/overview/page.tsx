@@ -247,7 +247,7 @@ export default function CompanyOverviewPage() {
               Discover the pinnacle of luxury in our geographically diverse portfolio of iconic and irreplaceable assets.
             </p>
             <button className="bg-[#1a2b4b] text-white px-12 py-5 text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-[#DC833D] transition-colors rounded-sm shadow-xl">
-              Explore Our Portfolio
+              Explore  Products and Services
             </button>
           </motion.div>
         </div> */}

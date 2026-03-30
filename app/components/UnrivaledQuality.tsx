@@ -49,11 +49,11 @@ export default function UnrivaledQuality() {
             {/* Large Overlapping Details Button */}
             <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 z-30">
               <Link
-                href="/portfolio"
+                href=" /products-and-services"
                 className="bg-[#c4a062] hover:bg-[#b38f51] text-white px-8 py-8 md:px-16 md:py-12 flex flex-col items-center justify-center space-y-3 group transition-all duration-300 min-w-[200px] shadow-2xl"
               >
                 <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.4em] uppercase text-center leading-tight">
-                  Our<br />Portfolio
+                  Our<br />Products and Services
                 </span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>

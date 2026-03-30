@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from "lucide-react";
 
-export default function PortfolioSection() {
+export default function ProductAndSectionSection() {
   return (
     <div className=" ">
 
@@ -29,9 +29,9 @@ export default function PortfolioSection() {
 
 
           {/* Central CTA */}
-          <Link href="/portfolio" className="bg-[#1a2b4b] text-white px-6 py-8 rounded-sm flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-h-[140px]">
+          <Link href=" /products-and-services" className="bg-[#1a2b4b] text-white px-6 py-8 rounded-sm flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-h-[140px]">
             <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-center leading-relaxed">
-              Our<br />Portfolio
+              Our<br />Products & Services
             </span>
             <motion.div
               whileHover={{ x: 5 }}

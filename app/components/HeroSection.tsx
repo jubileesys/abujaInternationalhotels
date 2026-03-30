@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import PortfolioSection from "./PortfolioSection";
+import ProductAndSectionSection from "./ProductAndSectionSection";
 
 export default function HeroSection() {
   return (
@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
 
       {/* Portfolio Section */}
-      <PortfolioSection />
+      <ProductAndSectionSection />
 
     </div>
   );

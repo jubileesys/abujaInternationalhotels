@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const mainMenuItems = [
   {
-    title: 'Our Portfolio',
-    href: '/portfolio',
+    title: ' Products and Services',
+    href: ' /products-and-services',
   },
   {
     title: 'Investor Relations',
