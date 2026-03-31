@@ -11,48 +11,52 @@ export default function ProductAndSectionSection() {
 
       {/* Portfolio Section */}
       <div className="bg-white px-4 py-16 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        {/* Top Row: Portfolio Grid */}
-        {/* Top Row: Portfolio Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-8 items-center mb-16">
-          {/* Property 1 */}
-          <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
-            <h3 className="text-[#1a2b4b] font-quicksand text-xs md:text-sm font-bold group-hover:text-[#DC833D] transition-colors uppercase tracking-widest leading-tight">
-              Nicon Luxury<br />Abuja
-            </h3>
-            <span className="text-[#DC833D] font-sans text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
-              {/*  Recent Acquisition */}
-            </span>
-            <div className="w-12 h-px bg-[#1a2b4b]/20 mt-2 group-hover:bg-[#DC833D] transition-colors" />
+
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12 mb-20 pb-16">
+          {/* Header Section */}
+          <div className="flex flex-col space-y-6 max-w-4xl group transition-all duration-700">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-px bg-[#DC833D]" />
+                <span className="text-[#DC833D] font-sans text-xs md:text-sm font-bold tracking-[0.4em] uppercase block">
+
+                </span>
+              </div>
+              <h2 className="text-[#1a2b4b] font-quicksand text-4xl md:text-6xl lg:text-8xl font-light group-hover:text-[#DC833D] transition-colors uppercase leading-[0.9] tracking-tighter">
+                Abuja <br /> International <br /> <span className="font-bold text-[#1a2b4b]">Hotels Plc</span>
+              </h2>
+            </div>
+
+
           </div>
 
-
-
-
-          {/* Central CTA */}
-          <Link href=" /products-and-services" className="bg-[#1a2b4b] text-white px-6 py-8 rounded-sm flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-h-[140px]">
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-center leading-relaxed">
-              Our<br />Products & Services
-            </span>
-            <motion.div
-              whileHover={{ x: 5 }}
-              className="text-[#DC833D]"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </motion.div>
-          </Link>
+          {/* Action Card */}
+          <div className="shrink-0 w-full lg:w-auto">
+            <Link href="/products-and-services" className="bg-[#1a2b4b] text-white p-10 md:p-12 rounded-sm flex flex-col items-center justify-center space-y-5 group hover:bg-[#15233d] transition-all duration-500 shadow-2xl relative overflow-hidden lg:min-w-[320px] min-h-[220px]">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#DC833D] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out" />
+              <div className="text-center space-y-1">
+                <span className="text-[10px] font-bold text-[#DC833D] tracking-[0.3em] uppercase">Explore</span>
+                <h3 className="text-sm md:text-base font-bold font-quicksand tracking-[0.4em] uppercase leading-relaxed">
+                  Our Products <br /> & Services
+                </h3>
+              </div>
+              <motion.div
+                whileHover={{ x: 10 }}
+                className="text-[#DC833D] mt-2"
+              >
+                <ArrowRight className="w-8 h-8" />
+              </motion.div>
+            </Link>
+          </div>
         </div>
 
         {/* Middle Row: Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-0 border-y border-[#DC833D]/30 mb-8 bg-gray-50/50">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-0 border-y border-[#1a2b4b]/10 mb-12 bg-gray-50/30">
 
-          <div className="flex flex-col items-center justify-center p-10 md:border-r border-[#DC833D]/30 space-y-2 group hover:bg-white transition-colors">
-            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">253</span>
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Rooms</span>
+          <div className="flex flex-col items-center justify-center p-12 space-y-3 group hover:bg-white transition-all duration-500">
+            <span className="text-5xl md:text-7xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-105 transition-transform duration-500 ">253</span>
+            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.4em] uppercase text-[#1a2b4b]">Luxury Rooms</span>
           </div>
-          {/*  <div className="flex flex-col items-center justify-center p-10 space-y-2 group hover:bg-white transition-colors">
-            <span className="text-4xl md:text-5xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-110 transition-transform">5</span>
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.25em] uppercase text-[#1a2b4b]">Major African Markets</span>
-          </div> */}
         </div>
 
         {/* Bottom Row: News Banner */}

@@ -10,7 +10,7 @@ const services = [
     id: 'lodging',
     title: 'Luxury Lodging',
     description: 'Experience unparalleled comfort in one of our 253 guestrooms, ranging from Classic rooms to our exquisite Presidential Suites.',
-    image: '/lodge-img.jpg'
+    image: '/lodge-img1.jpg'
   },
   {
     id: 'conference',

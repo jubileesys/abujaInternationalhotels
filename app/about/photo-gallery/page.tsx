@@ -19,6 +19,11 @@ const photos = [
     { src: '/fullview-2.png', alt: 'Skyline View' },
     { src: '/gym-img.jpg', alt: 'State-of-the-art Gym' },
     { src: '/nicon.png', alt: 'Exterior View' },
+    { src: '/lodge-img2.jpeg', alt: 'Lodge View' },
+    { src: '/lodge-img3.jpeg', alt: 'Lodge View' },
+    { src: '/lodge-img4.jpeg', alt: 'Lodge View' },
+    { src: '/lodge-img5.jpeg', alt: 'Lodge View' },
+
 ];
 
 export default function PhotoGalleryPage() {
