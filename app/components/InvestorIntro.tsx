@@ -16,7 +16,7 @@ export default function InvestorIntro() {
 
 
         {/* Title & Description */}
-        <div className="mb-24 ">
+        {/* <div className="mb-24 ">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function InvestorIntro() {
           >
             Abuja International Hotels is a premier lodging REIT owning a diverse portfolio of high-quality hotels and resorts positioned in top-tier urban and resort markets in Nigeria and select international locations. We focus on owning properties that are difficult to replicate and are managed by leading global hotel brands.
           </motion.p>
-        </div>
+        </div> */}
 
         <NewsBanner />
 
