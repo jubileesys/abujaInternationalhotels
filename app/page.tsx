@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import MaterialsCollapsible from './components/MaterialsCollapsible';
+import VideoSection from './components/VideoSection';
 import FeaturedServicesSlider from './components/FeaturedServicesSlider';
 import FoundationSection from './components/FoundationSection';
 import NewsInvestorSection from './components/NewsInvestorSection';
@@ -17,6 +18,7 @@ export default function Home() {
 
       <HeroSection />
       <MaterialsCollapsible />
+      <VideoSection />
       <FeaturedServicesSlider />
       <FoundationSection />
       <NewsInvestorSection />
