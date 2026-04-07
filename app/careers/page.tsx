@@ -34,7 +34,7 @@ export default function CareersPage() {
             <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/business-img.jpg"
+                        src="/business-img.jpeg"
                         alt="Careers at Abuja International Hotels"
                         className="w-full h-full object-cover text-white"
                         loading="eager"

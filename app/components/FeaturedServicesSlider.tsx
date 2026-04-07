@@ -10,7 +10,7 @@ const services = [
     id: 'lodging',
     title: 'Luxury Lodging',
     description: 'Experience unparalleled comfort in one of our 253 guestrooms, ranging from Classic rooms to our exquisite Presidential Suites.',
-    image: '/lodge-img1.jpg'
+    image: '/lodge-img1.jpeg'
   },
   {
     id: 'conference',
@@ -22,7 +22,7 @@ const services = [
     id: 'dining',
     title: 'Fine Dining',
     description: 'Savor a culinary journey with our selection of Nigerian and International cuisines, featuring our famous weekend poolside barbecues.',
-    image: '/fine-img.jpg'
+    image: '/fine-img.jpeg'
   },
   {
     id: 'wellness',
@@ -40,7 +40,7 @@ const services = [
     id: 'business',
     title: 'Business Centre',
     description: 'Maintain peak productivity with our 24/7 facility providing high-speed internet and comprehensive administrative support.',
-    image: '/business-img.jpg'
+    image: '/business-img.jpeg'
   }
 ];
 

@@ -10,7 +10,7 @@ const portfolioItems = [
     {
         title: "Luxury Lodging",
         description: "253 guestrooms from Classic to Presidential Suites. ",
-        image: "/yellow-room.jpg",
+        image: "/lodge-img1.jpeg",
         linkText: "Explore Accommodations",
         linkHref: "/contact",
         targetAudience: "Business Travelers, diplomats and families",
@@ -30,7 +30,7 @@ const portfolioItems = [
     {
         title: "Fine Dining",
         description: "Restaurants serving Nigerian and International cuisines. ",
-        image: "/fine-img.jpg",
+        image: "/fine-img.jpeg",
         linkText: "Discover Dining",
         linkHref: "/contact",
         targetAudience: "Food enthusiasts and guests hosting formal dinners",
@@ -60,7 +60,7 @@ const portfolioItems = [
     {
         title: "Business Centre",
         description: "24/7 facility providing internet and administrative support. ",
-        image: "/business-img.jpg",
+        image: "/business-img.jpeg",
         linkText: "Visit Centre",
         linkHref: "/contact",
         targetAudience: "Remote workers and international consultants",

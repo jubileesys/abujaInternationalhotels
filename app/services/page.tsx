@@ -30,7 +30,7 @@ export default function ServicesPage() {
             description: 'Savor a culinary journey with our selection of Nigerian and International cuisines, featuring our famous weekend poolside barbecues.',
             benefits: ['High-quality culinary experiences within a secure environment', 'Live music and local flavours', 'Diverse menu options for all palates'],
             target: 'Food enthusiasts and guests hosting formal dinners',
-            image: '/fine-img.jpg'
+            image: '/fine-img.jpeg'
         },
         {
             id: 'wellness',
@@ -57,7 +57,7 @@ export default function ServicesPage() {
             description: 'Maintain peak productivity with our 24/7 facility providing high-speed internet and comprehensive administrative support.',
             benefits: ['Ensures high productivity with reliable office infrastructure', 'Multilingual staff available to assist diplomatic delegations', 'Remote work support'],
             target: 'Remote workers and international consultants',
-            image: '/business-img.jpg'
+            image: '/business-img.jpeg'
         }
     ];
 

@@ -50,14 +50,6 @@ export default function ProductAndSectionSection() {
           </div>
         </div>
 
-        {/* Middle Row: Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-0 border-y border-[#1a2b4b]/10 mb-12 bg-gray-50/30">
-
-          <div className="flex flex-col items-center justify-center p-12 space-y-3 group hover:bg-white transition-all duration-500">
-            <span className="text-5xl md:text-7xl font-quicksand font-light text-[#DC833D] tracking-tight group-hover:scale-105 transition-transform duration-500 ">253</span>
-            <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.4em] uppercase text-[#1a2b4b]">Luxury Rooms</span>
-          </div>
-        </div>
 
         {/* Bottom Row: News Banner */}
         <Link href="/investors/results" className="flex flex-col md:flex-row justify-between items-center py-10 px-6 group border border-[#DC833D]/30 hover:bg-[#1a2b4b] transition-all duration-500 rounded-sm">

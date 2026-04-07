@@ -78,22 +78,7 @@ export default function FoundationSection() {
         {/* Call to Action */}
         <div className="mt-16 md:mt-0 flex justify-center -translate-y-px">
           <div className="bg-[#ECE08F] px-12 md:px-24 mt-px "> {/* Background masking for the button overlap if needed */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <Link
-                href="/about"
-                className="bg-[#1a2b4b] text-white px-10 py-6 md:px-16 md:py-10 flex flex-col items-center justify-center space-y-3 group hover:bg-[#15233d] transition-all duration-300 min-w-[200px] shadow-xl"
-              >
-                <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase">
-                  Learn More
-                </span>
-                <ArrowRight className="w-5 h-5 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+
           </div>
         </div>
       </div>
