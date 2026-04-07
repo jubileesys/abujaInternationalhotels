@@ -139,7 +139,7 @@ export default function FeaturedServicesSlider() {
               key={`btn-${currentIndex}`}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              href={`/services#${services[currentIndex].id}`}
+              href={`/products-and-services`}
               className="group/btn flex items-center gap-4 text-white hover:text-[#DC833D] transition-colors"
             >
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase border-b border-transparent group-hover/btn:border-[#DC833D] pb-1 transition-all">
