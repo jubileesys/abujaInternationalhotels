@@ -2,7 +2,9 @@
 
 import { X, FileText } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const quarterlyMaterials = [
   'Fourth Quarter 2025 Earnings Call',
@@ -17,7 +19,49 @@ const annualMaterials = [
   '2025 Annual Report'
 ];
 
+interface KeyMaterial {
+  id: number,
+  title: string,
+  category: string,
+  date: string,
+  file_path: string,
+  is_active: number,
+  created_at: string,
+  updated_at: string,
+  file_url: string,
+  download_url: string
+}
 export default function KeyMaterialsPage() {
+  const [keyMaterial, setKeyMaterial] = useState<KeyMaterial[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+
+  useEffect(() => {
+    const fetchMaterial = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/key-materials');
+        if (!response.ok) {
+          throw new Error('Failed to fetch financial reports');
+        }
+        const data: KeyMaterial[] = await response.json();
+        setKeyMaterial(data);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching reports:', err);
+        setError('Unable to load Key Material. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMaterial();
+
+
+  }, []);
+
+
   return (
     <main className="min-h-screen bg-[#1a2b4b] text-white selection:bg-[#DC833D] selection:text-white">
       {/* Background Decor (Faded Image) */}
@@ -58,42 +102,57 @@ export default function KeyMaterialsPage() {
           {/* Quarterly Results */}
           <div>
             <h2 className="text-[10px] font-bold tracking-[0.4em] text-[#DC833D] uppercase mb-10 border-b border-white/10 pb-4">
-              Quarterly Results
+              Material Results
             </h2>
-            <div className="space-y-6">
-              {quarterlyMaterials.map((item, idx) => (
-                <div key={idx} className="flex items-center justify-between group cursor-pointer border-b border-white/5 pb-4 hover:border-[#DC833D]/30 transition-colors">
-                  <span className="text-sm md:text-base text-white/80 group-hover:text-white transition-colors font-sans">
-                    {item}
-                  </span>
-                  <div className="flex items-center gap-3 text-[10px] font-bold tracking-widest text-[#DC833D] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
-                    <span>View PDF</span>
-                    <FileText className="w-5 h-5" />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <AnimatePresence mode="wait">
+              {isLoading ? (
+                <motion.div
+                  key="loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-col items-center justify-center py-20 space-y-4"
+                >
+                  <div className="w-12 h-12 border-t-2 border-b-2 border-[#DC833D] rounded-full animate-spin" />
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Loading Reports...</p>
+                </motion.div>
+              ) : error ? (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-center py-20"
+                >
+                  <p className="text-red-500 mb-4">{error}</p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="text-[#DC833D] text-[10px] font-bold tracking-[0.2em] uppercase hover:underline"
+                  >
+                    Retry
+                  </button>
+                </motion.div>
+              ) : (
+
+                <div className="space-y-6">
+                  {keyMaterial.map((item, idx) => (
+                    <div key={idx} className="flex items-center justify-between group cursor-pointer border-b border-white/5 pb-4 hover:border-[#DC833D]/30 transition-colors">
+                      <span className="text-sm md:text-base text-white/80 group-hover:text-white transition-colors font-sans">
+                        {item.title}
+                      </span>
+                      <a
+                        href={item?.download_url || item?.file_url}
+                        className="flex items-center gap-3 text-[10px] font-bold tracking-widest text-[#DC833D] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
+                        <span>View PDF</span>
+                        <FileText className="w-5 h-5" />
+                      </a>
+                    </div>
+                  ))}
+                </div>)}
+            </AnimatePresence>
           </div>
 
-          {/* Annual Materials */}
-          <div>
-            <h2 className="text-[10px] font-bold tracking-[0.4em] text-[#DC833D] uppercase mb-10 border-b border-white/10 pb-4">
-              Annual Materials
-            </h2>
-            <div className="space-y-6">
-              {annualMaterials.map((item, idx) => (
-                <div key={idx} className="flex items-center justify-between group cursor-pointer border-b border-white/5 pb-4 hover:border-[#DC833D]/30 transition-colors">
-                  <span className="text-sm md:text-base text-white/80 group-hover:text-white transition-colors font-sans">
-                    {item}
-                  </span>
-                  <div className="flex items-center gap-3 text-[10px] font-bold tracking-widest text-[#DC833D] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
-                    <span>View PDF</span>
-                    <FileText className="w-5 h-5" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
 
         {/* Footer Info */}

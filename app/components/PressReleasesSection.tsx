@@ -31,7 +31,7 @@ export default function PressReleasesSection() {
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,9 +40,10 @@ export default function PressReleasesSection() {
           Press Releases
         </motion.h2>
 
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {pressReleases.map((news, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +62,7 @@ export default function PressReleasesSection() {
         </div>
 
         <div className="text-center mt-16">
-          <Link 
+          <Link
             href="/investors/press-releases"
             className="inline-flex items-center text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#1a2b4b] group"
           >

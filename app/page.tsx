@@ -22,12 +22,8 @@ export default function Home() {
       <FeaturedServicesSlider />
       <FoundationSection />
       <NewsInvestorSection />
-      {/*      <AboutSection /> */}
       <CorporateResponsibilitySection />
       <CareersSection />
-      {/* <ServicesSection /> */}
-      {/*    <InvestorRelationsSection /> */}
-      {/*  <CommitmentSection /> */}
 
     </div>
   );

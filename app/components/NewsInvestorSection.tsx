@@ -3,45 +3,60 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-const pressReleases = [
-  {
-    date: '2/19/26',
-    title: 'Abuja International Hotels Provides Updated Fourth Quarter 2025 Investor Presentation',
-  },
-  {
-    date: '2/18/26',
-    title: 'Abuja International Hotels, Inc. Reports Results for 2025',
-  },
-  {
-    date: '2/18/26',
-    title: 'Abuja International Hotels Announces Expansion of Sustainable Luxury Initiative across Prime Locations',
-  },
-];
 
-const otherNews = [
-  {
-    date: '3/5/26',
-    title: 'Abuja International Hotels Named "Best Luxury Hotel in Nigeria" at the 2026 World Travel Awards',
-  },
-  {
-    date: '2/26/26',
-    title: 'New State-of-the-Art Wellness & Spa Wing to Open at Abuja International Hotels in Q3 2026',
-  },
-  {
-    date: '2/18/26',
-    title: 'Abuja International Hotels Hosts Global Diplomatic Forum on Sustainable Tourism and Hospitality',
-  },
-];
+
+interface PressRelease {
+  id: number,
+  title: string,
+  slug: string,
+  date: string,
+  content: string,
+  is_active: number,
+  created_at: string,
+  updated_at: string
+}
 
 export default function NewsInvestorSection() {
+
+  const [pressReleases, setPressReleases] = useState<PressRelease[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+
+
+  useEffect(() => {
+    const fetchMaterial = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://abujainternationhotel.jubileesystem.com/api/press-releases');
+        if (!response.ok) {
+          throw new Error('Failed to fetch financial reports');
+        }
+        const data: PressRelease[] = await response.json();
+        setPressReleases(data);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching reports:', err);
+        setError('Unable to load Key Material. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMaterial();
+
+
+  }, []);
+
   return (
     <section className="relative w-full overflow-visible">
       {/* Beige News Area */}
       <div className="bg-[#ECE08F]/30 pt-16 pb-32 md:pt-24 md:pb-48">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           {/* Top Row: News Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
             {/* Press Releases */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -52,47 +67,56 @@ export default function NewsInvestorSection() {
               <h2 className="text-2xl md:text-3xl font-serif text-[#1a2b4b] mb-4">Press Releases</h2>
               <div className="w-24 h-px bg-[#DC833D] mb-12" />
               <div className="space-y-10">
-                {pressReleases.map((news, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.2em] text-[#DC833D] block mb-2">
-                      {news.date}
-                    </span>
-                    <p className="text-sm md:text-base font-sans text-gray-800 leading-snug group-hover:text-[#DC833D] transition-colors">
-                      {news.title}
-                    </p>
+                {isLoading ? (
+                  <motion.div
+                    key="loading"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex flex-col items-center justify-center py-20 space-y-4"
+                  >
+                    <div className="w-12 h-12 border-t-2 border-b-2 border-[#DC833D] rounded-full animate-spin" />
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Loading Reports...</p>
+                  </motion.div>
+                ) : error ? (
+                  <motion.div
+                    key="error"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="text-center py-20"
+                  >
+                    <p className="text-red-500 mb-4">{error}</p>
+                    <button
+                      onClick={() => window.location.reload()}
+                      className="text-[#DC833D] text-[10px] font-bold tracking-[0.2em] uppercase hover:underline"
+                    >
+                      Retry
+                    </button>
+                  </motion.div>
+                ) : pressReleases.length > 0 ? (
+                  pressReleases.map((news, index) => (
+                    <div key={index} className="group cursor-pointer">
+                      <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.2em] text-[#DC833D] block mb-2">
+                        {news.date}
+                      </span>
+                      <p className="text-sm md:text-base font-sans text-gray-800 leading-snug group-hover:text-[#DC833D] transition-colors">
+                        {news.title}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-center py-20 text-gray-400 font-sans italic">
+                    No press releases found for the selected filters.
                   </div>
-                ))}
+                )}
               </div>
               <Link href="/news" className="inline-flex items-center text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-[#1a2b4b] mt-12 group">
                 Press Releases <ArrowRight className="ml-3 w-4 h-4 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
 
-            {/* Other Company News */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-2xl md:text-3xl font-serif text-[#1a2b4b] mb-4">Other Company News</h2>
-              <div className="w-24 h-px bg-[#DC833D] mb-12" />
-              <div className="space-y-10">
-                {otherNews.map((news, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.2em] text-[#DC833D] block mb-2">
-                      {news.date}
-                    </span>
-                    <p className="text-sm md:text-base font-sans text-gray-800 leading-snug group-hover:text-[#DC833D] transition-colors">
-                      {news.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <Link href="/news" className="inline-flex items-center text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase text-[#1a2b4b] mt-12 group">
-                View All <ArrowRight className="ml-3 w-4 h-4 text-[#DC833D] group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+
           </div>
         </div>
       </div>
@@ -118,7 +142,7 @@ export default function NewsInvestorSection() {
             {/* Sub-floating Details Button */}
             <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 z-40">
               <Link
-                href="/investors"
+                href="/investors/key-materials"
                 className="bg-[#c4a062] hover:bg-[#b38f51] text-white px-8 py-6 md:px-12 md:py-8 flex flex-col items-center justify-center space-y-2 group transition-all duration-300 min-w-[140px] shadow-2xl"
               >
                 <span className="text-[10px] md:text-xs font-bold font-quicksand tracking-[0.3em] uppercase">
