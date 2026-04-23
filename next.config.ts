@@ -19,14 +19,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: '/api/:path*',
-        destination: 'https://api.sbx.dws.hotelman.ng/api/:path*',
+        source: '/webmail',
+        destination: 'https://webmail.abujainternationalhotels.com/',
+        permanent: false,
       },
     ];
-  },
+  }
 };
 
 export default nextConfig;
